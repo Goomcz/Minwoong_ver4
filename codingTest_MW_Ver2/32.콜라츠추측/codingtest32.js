@@ -3,9 +3,9 @@
 위 작업을 몇 번이나 반복해야 하는지 반환하는 함수, solution을 완성해 주세요. 
 단, 주어진 수가 1인 경우에는 0을, 작업을 500번 반복할 때까지 1이 되지 않는다면 –1을 반환해 주세요.
 */
-let num = 626331; // -1
+let num = 6; // -1
 let count = 0;
-while(true){
+/*while(true){
     num%2===0? (num/=2, count++) : (num===1? count = 0 : (num = (num*3)+1, count++));
     if(count === 0 || num=== 1){
         break;
@@ -13,5 +13,15 @@ while(true){
         count = -1;
         break;
     }
+}*/
+
+while(true){
+    num===1? count=0 
+    : (count===500? count=-1 
+    : (num%2===0? (num/=2, count++) 
+    : (num = (num*3)+1, count++)));
+    if(num=== 1 || count === -1){
+        break;
+    } 
 }
 console.log(count);
