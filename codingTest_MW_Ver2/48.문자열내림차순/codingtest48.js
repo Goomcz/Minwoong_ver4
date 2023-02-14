@@ -6,10 +6,13 @@
 // 나중에 나오는 알파벳이 큰 알파벳임
 
 let s = 'Zbcdefg';
-var answer= [];
-console.log(s.charCodeAt(0));
+let newS= s.split('');
+console.log(newS.sort((a,b)=> a>b? -1:1));
+//console.log(NewS.charCodeAt(0));
 
-console.log(s.length);
+
+
+/*console.log(s.length);
 
 for(let i=0; i<s.length; i++){
     answer.unshift(s.charCodeAt(i));
@@ -23,3 +26,4 @@ answer.sort((a,b)=>{
 
 console.log(answer);
 
+*/

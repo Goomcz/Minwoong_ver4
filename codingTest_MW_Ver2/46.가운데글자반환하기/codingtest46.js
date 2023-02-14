@@ -5,5 +5,7 @@ let s2='qwer';
 let newS= s.split('');
 console.log(newS);
 
-var answer = newS.length%2===0 ? [newS[newS.length/2],newS[newS.length/2+1]] : [newS[Math.floor(newS.length/2)]];
+var answer = newS.length%2===0 ? 
+[newS[newS.length/2],newS[newS.length/2+1]] 
+: [newS[Math.floor(newS.length/2)]];
 console.log(answer);
