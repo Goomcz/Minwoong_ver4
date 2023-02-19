@@ -18,14 +18,37 @@ console.log('A'.charCodeAt());
 console.log('Z'.charCodeAt());
 console.log('a'.charCodeAt());
 console.log('z'.charCodeAt());
-
+// a  b  c  d   e   f    g    z // 알파벳 개수 26개 -> 25칸 이동 가능
+// 97 98 99 100 102          122   *123 -> 97 = 26이네* 
 console.log(s.split(''));
-var newS = s.split('').map(i => i.charCodeAt());
-//.map(j => {return j!==32? j+n : j})
+let newS = s.split('').map(i => i.charCodeAt());
+console.log('시저 암호 전:' + newS);
+/*.map((val)=>{
+    switch(val+n){
+        case val+n >=65 && val <=90 || val+n >=97 && val <=122:
+            val = val +n;
+            break;
+        case val +n > 90 || val +n >122 :
+            val = val + n - 26;
+            break;
+    }
+    return val;
+});*/ //.map(j => {return j!==32? j+n : j})
 for(let i=0; i<newS.length; i++){
- console.log('gg');   
+if(newS[i] >= 65 && newS[i] <=90){
+    if(newS[i] + n >90){
+        newS[i] = newS[i] + n - 26; 
+    } else newS[i] = newS[i] + n;
+} else if(newS[i] >= 97 && newS[i] <= 122){
+    if(newS[i] + n >122){
+        newS[i] = newS[i] + n - 26; 
+    } else newS[i] = newS[i] + n;
+}
 }
 
-//.map(k => String.fromCodePoint(k)) //String.fromCodePoint() 기억해둘것
-//.join('');
+var answer = newS.map(k => String.fromCodePoint(k)).join(''); 
+//String.fromCodePoint() 기억해둘것
+
 console.log(newS);
+console.log(answer);
+
