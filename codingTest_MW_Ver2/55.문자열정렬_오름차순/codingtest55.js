@@ -26,7 +26,7 @@ let newstringMap = new Map([...stringMap].sort((a,b) =>
 // 이 알고리즘이 이해가 안됨
 
 console.log(newstringMap);
-console.log(newstringMap['0']);
+console.log(newstringMap.keys(0));
 
 /*String.map((value,index) =>{
     if(index === newstringMap){
