@@ -16,12 +16,21 @@ let t = '3141592';
 let p = '271';
 // slice -> 원본 배열은 건드리지 않은 채 새로운 배열을 생성
 // splice -> 원본 배열에서 잘라 배열 생성
-console.log(t.split(''));
-console.log(p.length);
-let slicedArray = t.split('');
-let newArray = [];
-for(let i=0; i<t.length-p.length-2; i++){
-    newArray.push(slicedArray[i]+slicedArray[i+1]) // 몇개인지를 알 수 없으니... 
-}
-    
-console.log(newArray);
+let slicedArray = [];
+let counts =0;
+while(counts<t.length){
+    slicedArray.push(t.slice(counts,p.length+counts));
+    // slice의 파라미터가 시작 index ~ 자를 갯수 아니었나?
+    // start index ~ end index 같은데?
+    counts++;
+    console.log(counts);
+}    
+console.log(slicedArray);
+
+var answer = slicedArray.filter((val)=>{
+    if(Number(val)<Number(p) && val.length === p.length){
+        return val;
+    }
+}).length;
+
+console.log(answer);
