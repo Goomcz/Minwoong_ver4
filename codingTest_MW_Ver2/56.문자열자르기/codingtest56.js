@@ -12,8 +12,10 @@ t의 길이가 3인 부분 문자열은 314, 141, 415, 159, 592입니다.
 p의 길이 ≤ t의 길이 ≤ 10,000
 t와 p는 숫자로만 이루어진 문자열이며, 0으로 시작하지 않습니다.
 */
-let t = '3141592';
-let p = '271';
+let t = "10203";
+console.log(t[2]);
+let p = '15';
+console.log('P 길이:' + p.length);
 // slice -> 원본 배열은 건드리지 않은 채 새로운 배열을 생성
 // splice -> 원본 배열에서 잘라 배열 생성
 let slicedArray = [];
@@ -22,13 +24,15 @@ while(counts<t.length){
     slicedArray.push(t.slice(counts,p.length+counts));
     // slice의 파라미터가 시작 index ~ 자를 갯수 아니었나?
     // start index ~ end index 같은데?
+    // 단, 여기서 중요한 점, end index는 미포함!
+    console.log(p.length+counts);
     counts++;
-    console.log(counts);
+    
 }    
 console.log(slicedArray);
 
 var answer = slicedArray.filter((val)=>{
-    if(Number(val)<Number(p) && val.length === p.length){
+    if(Number(val)<=Number(p) && val.length === p.length){
         return val;
     }
 }).length;
