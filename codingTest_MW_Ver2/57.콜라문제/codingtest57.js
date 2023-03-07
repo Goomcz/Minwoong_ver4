@@ -12,14 +12,14 @@
 */
 
 // 빈병 a / 새 콜라 b / 총 빈병 n
-let a = 3; let b = 1; let n = 20;
+let a = 5; let b = 3; let n = 21;
 let cokeGet = 0;
 // 빈병 2 + 18 -> 새콜라 6 빈병 2 -> 빈병 6 + 2 -> 새 콜라 2 + 빈병 2 -> 빈병 2 + 빈병 2
 // -> 새콜라 1 빈병 1 
-while(n>3){
-    cokeGet += Math.floor(n/3);
-    n = n - Math.floor(n/3) + (Math.floor(n/3) / a);
-    console.log(n);
-}
+while(n>=a){
+    cokeGet += Math.floor(n/a)*b; // 기존 가지고 있던 빈병 / 3 => 새로운 콜라
+    n = n%a + Math.floor(n/a)*b; // 바꾼 빈병을 제외하고 남은 빈병 + 새롭게 얻을 콜라의 빈병
+} // 돌아올 빈병의 갯수 b를 곱해줘야 함! 여기서 틀림
 
 console.log(cokeGet);
+console.log(5%2);
