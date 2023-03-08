@@ -13,23 +13,44 @@ solution을 완성하세요. 요일의 이름은 일요일부터 토요일까지
 
 1월 1일 금 / 2일 토 /3일 일 /4일 월 /5일 화 /6 수 /7 목 /8 금 /9 토 /10 일 /11 월
 7로 나눈 나머지 1 : 금 ~ 
-
-2월 1일 월/ 2 화/ 3 수/ 4 목/ 5 금/ 6 토 7 일
-1월 31일  09월 30
-2월 29일  10월 31
-3월 31일  11월 30
-4월 30일  12월 31
-5월 31일
-6월 30일
-7월 31일
-8월 31일
 */
 let a= 5; let b = 24; // TUE
+var answer = '';
+let calendar = new Map([[1,30],[2,29],[3,31],[4,30],[5,31],[6,30],
+        [7,31],[8,31],[9,30],[10,31],[11,30],[12,31]]);
+let passedDate = b;
+// a-1 = 4 
+// b-1 =23
+// 1+29 -> 2월 1일  1 + 28 -> 3월 1일  1+30 -> 4월 1일 1+29 -> 5월 1일
+// +23 일 ==> total 지난 일 수 => 나눈 나머지 구하기
+for(let i=1; i<a; i++){
+passedDate += calendar.get(i);
+}
+console.log(passedDate);
+switch(passedDate%7){
+        case 1
+        :answer = 'FRI';
+        break;
+        case 2
+        :answer = 'SAT';
+        break;
+        case 3
+        :answer = 'SUN';
+        break;
+        case 4
+        :answer = 'MON';
+        break;
+        case 5
+        :answer = 'TUE';
+        break;
+        case 6
+        :answer = 'WED';
+        break;
+        case 0
+        :answer = 'THU';
+        break;
+}
 
-let cal = {[[1],[30]],[[2],[29]],[[3],[31]],[[4],[30]],[[5],[31]],[[6],[30]],[[7],[31]]
-        ,[[8],[31]],[[9],[30]],[[10],[31]],[[11],[30]],[[12],[31]]};
-
-
-
+console.log(answer);
 
 
